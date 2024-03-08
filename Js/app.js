@@ -4,6 +4,16 @@ let userYear = null;
 let userMonth = null;
 let userDay = null;
 
+let showUserDays = document.querySelector('#show-day')
+let showUserMonth = document.querySelector('#show-month')
+let showUserYear = document.querySelector('#show-year')
+
+
+const date = new Date()
+const daysUntilNow = (date.getFullYear() * 365) + ((date.getMonth() + 1) * 30) + date.getDate()
+
+console.log(daysUntilNow);
+
 
 
 inputElem.forEach(input => {
@@ -28,29 +38,57 @@ inputElem.forEach(input => {
 
         switch (e.target.placeholder) {
             case 'DD': {
-                userDay = e.target.value
+                userDay = Number(e.target.value)
                 break;
             }
             case 'MM': {
-                userMonth = e.target.value
+                userMonth = Number(e.target.value)
                 break;
             }
             case 'YY': {
-                userYear = e.target.value
+                userYear = Number(e.target.value)
+                console.log(userYear);
                 break;
             }
         }
     })
 })
 
+
+
 calculateAge.addEventListener('click', () => {
+    let userDateDays = (userYear * 365) + (userMonth * 30) + userDay
+
+    let diffDays = daysUntilNow - userDateDays
+
+    if (diffDays) {
+
+        let userAgeYear = Math.trunc(diffDays / 365)
+        let userAgeMonth = Math.trunc((diffDays % 365) / 30)
+        let userAgeDays = Math.trunc((diffDays % 365) % 30)
+
+        showUserYear.innerHTML = userAgeYear
+        showUserMonth.innerHTML = userAgeMonth
+        showUserDays.innerHTML = userAgeDays
+
+    } else {
+
+        alert('please enter number')
+
+    }
+
+
     inputElem.forEach(input => {
+
         input.value = ''
 
         if (input.placeholder === 'DD') {
 
             input.focus()
-            
+
         }
     })
+
+
 })
+

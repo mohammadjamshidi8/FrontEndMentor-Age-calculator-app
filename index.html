@@ -35,9 +35,9 @@
         class="py-4 px-4 md:px-20 flex flex-col bg-white w-11/12 xl:w-1/2 rounded-t-3xl rounded-br-[100px] rounded-bl-3xl gap-y-12"
       >
         <!-- input section start -->
-        <div class="w-full md:w-4/6 flex gap-x-3 md:gap-x-8">
+        <div class="w-full md:w-4/6 flex gap-x-3 md:gap-x-8 py-8">
           <div class="md:w-1/3 flex flex-col gap-y-2">
-            <label for="day" class="capitalize">day</label>
+            <label for="day" class="capitalize text-smokey">day</label>
             <div class="relative">
               <input
                 maxlength="2"
@@ -53,7 +53,7 @@
           </div>
 
           <div class="md:w-1/3 flex flex-col gap-y-2">
-            <label for="month" class="capitalize">month</label>
+            <label for="month" class="capitalize text-smokey">month</label>
             <div class="relative">
               <input
                 maxlength="2"
@@ -69,7 +69,7 @@
           </div>
 
           <div class="md:w-1/3 flex flex-col gap-y-2">
-            <label for="year" class="capitalize">year</label>
+            <label for="year" class="capitalize text-smokey">year</label>
             <div class="relative">
               <input
                 maxlength="4"
@@ -106,17 +106,17 @@
 
         <div class="flex flex-col gap-y-4 md:gap-y-0">
           <div class="w-max flex items-center md:gap-x-4">
-            <span class="md:text-9xl text-6xl text-purple">--</span>
+            <span id="show-year"  class="md:text-9xl text-6xl text-purple">--</span>
             <span class="md:text-[100px] text-6xl font-bold">year</span>
           </div>
 
           <div class="w-max flex items-center md:gap-x-4">
-            <span class="md:text-9xl text-6xl text-purple">--</span>
+            <span  id="show-month" class="md:text-9xl text-6xl text-purple">--</span>
             <span class="md:text-[100px] text-6xl font-bold">months</span>
           </div>
 
           <div class="w-max flex items-center gap-x-4">
-            <span class="md:text-9xl text-6xl text-purple">--</span>
+            <span id="show-day"  class="md:text-9xl text-6xl text-purple">--</span>
             <span class="md:text-[100px] text-6xl font-bold">days</span>
           </div>
         </div>
